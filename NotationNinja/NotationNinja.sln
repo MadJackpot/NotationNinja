@@ -3,7 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30011.22
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NotationNinja", "NotationNinja\NotationNinja.csproj", "{052866DF-462C-41B8-B40E-E87EC2BCECFA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NotationNinja", "NotationNinja\NotationNinja.csproj", "{052866DF-462C-41B8-B40E-E87EC2BCECFA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NotationNinja.MediatR", "NotationNinja.MediatR\NotationNinja.MediatR.csproj", "{D9C2678E-2541-45EF-8A9F-4850DB80426B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NotationNinja.Models", "NotationNinja.Models\NotationNinja.Models.csproj", "{1EB7C072-E229-4226-AAB0-190673292FAF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NotationNinja.MediatR.Test", "NotationNinja.MediatR.Test\NotationNinja.MediatR.Test.csproj", "{54B21E9A-064D-46BD-8357-24DB63F6E108}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +21,18 @@ Global
 		{052866DF-462C-41B8-B40E-E87EC2BCECFA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{052866DF-462C-41B8-B40E-E87EC2BCECFA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{052866DF-462C-41B8-B40E-E87EC2BCECFA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D9C2678E-2541-45EF-8A9F-4850DB80426B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D9C2678E-2541-45EF-8A9F-4850DB80426B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D9C2678E-2541-45EF-8A9F-4850DB80426B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D9C2678E-2541-45EF-8A9F-4850DB80426B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1EB7C072-E229-4226-AAB0-190673292FAF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1EB7C072-E229-4226-AAB0-190673292FAF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1EB7C072-E229-4226-AAB0-190673292FAF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1EB7C072-E229-4226-AAB0-190673292FAF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{54B21E9A-064D-46BD-8357-24DB63F6E108}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{54B21E9A-064D-46BD-8357-24DB63F6E108}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{54B21E9A-064D-46BD-8357-24DB63F6E108}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{54B21E9A-064D-46BD-8357-24DB63F6E108}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

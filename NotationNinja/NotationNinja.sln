@@ -5,11 +5,13 @@ VisualStudioVersion = 16.0.30011.22
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NotationNinja", "NotationNinja\NotationNinja.csproj", "{052866DF-462C-41B8-B40E-E87EC2BCECFA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NotationNinja.MediatR", "NotationNinja.MediatR\NotationNinja.MediatR.csproj", "{D9C2678E-2541-45EF-8A9F-4850DB80426B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NotationNinja.Models", "NotationNinja.Models\NotationNinja.Models.csproj", "{1EB7C072-E229-4226-AAB0-190673292FAF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NotationNinja.Models", "NotationNinja.Models\NotationNinja.Models.csproj", "{1EB7C072-E229-4226-AAB0-190673292FAF}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{AD689EE4-46A9-41FF-A634-B2F0AA3424D2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NotationNinja.MediatR.Test", "NotationNinja.MediatR.Test\NotationNinja.MediatR.Test.csproj", "{54B21E9A-064D-46BD-8357-24DB63F6E108}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NotationNinja.Services", "NotationNinja.Services\NotationNinja.Services.csproj", "{78E4DAC2-7691-4F0A-85D3-02B005119C9A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NotationNinja.Services.Tests", "NotationNinja.Services.Tests\NotationNinja.Services.Tests.csproj", "{FB5AF049-28E2-4727-A8E0-3DC407A6F07B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,21 +23,24 @@ Global
 		{052866DF-462C-41B8-B40E-E87EC2BCECFA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{052866DF-462C-41B8-B40E-E87EC2BCECFA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{052866DF-462C-41B8-B40E-E87EC2BCECFA}.Release|Any CPU.Build.0 = Release|Any CPU
-		{D9C2678E-2541-45EF-8A9F-4850DB80426B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{D9C2678E-2541-45EF-8A9F-4850DB80426B}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{D9C2678E-2541-45EF-8A9F-4850DB80426B}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{D9C2678E-2541-45EF-8A9F-4850DB80426B}.Release|Any CPU.Build.0 = Release|Any CPU
 		{1EB7C072-E229-4226-AAB0-190673292FAF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{1EB7C072-E229-4226-AAB0-190673292FAF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1EB7C072-E229-4226-AAB0-190673292FAF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1EB7C072-E229-4226-AAB0-190673292FAF}.Release|Any CPU.Build.0 = Release|Any CPU
-		{54B21E9A-064D-46BD-8357-24DB63F6E108}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{54B21E9A-064D-46BD-8357-24DB63F6E108}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{54B21E9A-064D-46BD-8357-24DB63F6E108}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{54B21E9A-064D-46BD-8357-24DB63F6E108}.Release|Any CPU.Build.0 = Release|Any CPU
+		{78E4DAC2-7691-4F0A-85D3-02B005119C9A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{78E4DAC2-7691-4F0A-85D3-02B005119C9A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{78E4DAC2-7691-4F0A-85D3-02B005119C9A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{78E4DAC2-7691-4F0A-85D3-02B005119C9A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FB5AF049-28E2-4727-A8E0-3DC407A6F07B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FB5AF049-28E2-4727-A8E0-3DC407A6F07B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FB5AF049-28E2-4727-A8E0-3DC407A6F07B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FB5AF049-28E2-4727-A8E0-3DC407A6F07B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{FB5AF049-28E2-4727-A8E0-3DC407A6F07B} = {AD689EE4-46A9-41FF-A634-B2F0AA3424D2}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {C277D21E-E215-40C1-A9DE-B8C2A211C7F8}

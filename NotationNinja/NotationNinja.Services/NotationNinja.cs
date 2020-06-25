@@ -24,7 +24,7 @@ namespace NotationNinja.Services
             nodes
                .Where(x => x is SymbolNode)
                .Cast<SymbolNode>()
-               .OrderBy(x => x.Symbol.Priority)
+               .OrderBy(x => _parser.GetOrderById(nodes, x))
                .ToList()
                .ForEach(x =>  x.Process(nodes, _parser));
 

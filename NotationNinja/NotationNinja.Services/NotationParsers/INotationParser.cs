@@ -9,5 +9,6 @@ namespace NotationNinja.Services.NotationParsers
     {
         public Node GetLeftNode(List<Node> nodes, int index);
         public Node GetRightNode(List<Node> nodes, int index);
+        public int GetOrderById(List<Node> nodes, Node node);
     }
 }

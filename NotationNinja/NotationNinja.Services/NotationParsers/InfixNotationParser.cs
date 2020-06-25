@@ -13,6 +13,11 @@ namespace NotationNinja.Services.NotationParsers
             return nodes[index - 1];
         }
 
+        public int GetOrderById(List<Node> nodes, Node node)
+        {
+            return (node as SymbolNode).Symbol.Priority;
+        }
+
         public Node GetRightNode(List<Node> nodes, int index)
         {
             return nodes[index + 1];

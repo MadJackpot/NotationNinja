@@ -22,9 +22,9 @@ namespace NotationNinja.Controllers
             _mediator = mediator;
         }
 
-        [HttpGet]
+        [HttpPost]
         [Route("ToPostfix")]
-        public async Task<string> ToPostfix([FromBody]string input)
+        public async Task<string> ToPostfix(string input)
         {
             return await _mediator.Send(new GetPostfix { Input = input });
         }

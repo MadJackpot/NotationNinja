@@ -9,7 +9,7 @@ namespace NotationNinja.MediatR
     {
         public override void Load(IServiceCollection services)
         {
-            services.AddScoped<IMediator, Mediator>();
+            services.AddMediatR();
             services.AddRequestModules(typeof(MediatRModule).Assembly);
         }
     }

@@ -6,16 +6,16 @@ using System.Text;
 
 namespace NotationNinja.Services.NotationParsers
 {
-    public class InfixNotationParser : INotationParser
+    public class PrefixNotationParser : INotationParser
     {
         public Node GetLeftNode(List<Node> nodes, int index)
         {
-            return nodes[index - 1];
+            return nodes[index + 1];
         }
 
         public Node GetRightNode(List<Node> nodes, int index)
         {
-            return nodes[index + 1];
+            return nodes[index + 2];
         }
     }
 }

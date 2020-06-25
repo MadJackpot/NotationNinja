@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace NotationNinja.Models.Symbols
+namespace NotationNinja.Services.Symbols
 {
     public static class SymbolLookup
     {

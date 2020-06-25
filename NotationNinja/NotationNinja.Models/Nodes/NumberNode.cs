@@ -7,5 +7,9 @@ namespace NotationNinja.Models.Nodes
     public class NumberNode : Node
     {
         public string Value { get; set; }
+
+        public override void Process(List<Node> nodes)
+        {
+        }
     }
 }

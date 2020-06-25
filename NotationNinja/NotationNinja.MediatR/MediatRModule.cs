@@ -11,7 +11,6 @@ namespace NotationNinja.MediatR
         {
             services.AddScoped<IMediator, Mediator>();
             services.AddRequestModules(typeof(MediatRModule).Assembly);
-            services.AddNotificationModules(typeof(MediatRModule).Assembly);
         }
     }
 }

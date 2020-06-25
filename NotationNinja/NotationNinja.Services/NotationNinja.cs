@@ -17,7 +17,28 @@ namespace NotationNinja.Services
             _parser = parser;
         }
 
+        public string ToPrefix(string input)
+        {
+            var nodes = CreateAndProcessNodes(input);
+
+            return string.Join(' ', nodes.Select(x => x.ToPrefix()));
+        }
+
         public string ToPostfix(string input)
+        {
+            var nodes = CreateAndProcessNodes(input);
+
+            return string.Join(' ', nodes.Select(x => x.ToPostfix()));
+        }
+
+        public string ToInfix(string input)
+        {
+            var nodes = CreateAndProcessNodes(input);
+
+            return string.Join(' ', nodes.Select(x => x.ToInfix()));
+        }
+
+        public List<Node> CreateAndProcessNodes(string input)
         {
             var nodes = input.Split(' ').Select(NodeFactory.GenerateNode).ToList();
 
@@ -28,7 +49,7 @@ namespace NotationNinja.Services
                .ToList()
                .ForEach(x =>  x.Process(nodes, _parser));
 
-            return string.Join(' ', nodes.Select(x => x.ToPostfix()));
+            return nodes;
         }
     }
 }

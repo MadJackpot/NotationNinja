@@ -8,6 +8,10 @@ namespace NotationNinja.Services.Nodes
     {
         public abstract void Process(List<Node> nodes, INotationParser parser);
 
+        public abstract string ToPrefix();
+
         public abstract string ToPostfix();
+
+        public abstract string ToInfix();
     }
 }

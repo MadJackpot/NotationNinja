@@ -13,8 +13,17 @@ namespace NotationNinja.Services.Nodes
         {
             // Number nodes just have a value and have no further processing.
         }
+        public override string ToPrefix()
+        {
+            return Value;
+        }
 
         public override string ToPostfix()
+        {
+            return Value;
+        }
+
+        public override string ToInfix()
         {
             return Value;
         }

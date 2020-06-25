@@ -26,9 +26,19 @@ namespace NotationNinja.Services.Nodes
             nodes.Remove(rightNode);
         }
 
+        public override string ToPrefix()
+        {
+            return $"{Symbol.Character} {Left.ToPrefix()} {Right.ToPrefix()}";
+        }
+
         public override string ToPostfix()
         {
             return $"{Left.ToPostfix()} {Right.ToPostfix()} {Symbol.Character}";
+        }
+
+        public override string ToInfix()
+        {
+            return $"{Left.ToPostfix()} {Symbol.Character} {Right.ToPostfix()}";
         }
     }
 }

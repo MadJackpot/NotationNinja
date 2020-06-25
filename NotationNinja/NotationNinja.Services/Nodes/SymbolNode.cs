@@ -38,7 +38,7 @@ namespace NotationNinja.Services.Nodes
 
         public override string ToInfix()
         {
-            return $"{Left.ToPostfix()} {Symbol.Character} {Right.ToPostfix()}";
+            return $"{Left.ToInfix()} {Symbol.Character} {Right.ToInfix()}";
         }
     }
 }

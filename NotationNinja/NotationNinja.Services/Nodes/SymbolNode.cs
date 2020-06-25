@@ -9,6 +9,8 @@ namespace NotationNinja.Services.Nodes
     public class SymbolNode : Node
     {
         public Symbol Symbol { get; set; }
+        public Node Left { get; set; }
+        public Node Right { get; set; }
 
         public override void Process(List<Node> nodes, INotationParser parser)
         {

@@ -41,5 +41,18 @@ namespace NotationNinja.Services.Tests
 
             Assert.Equal(expected, result);
         }
+
+        [Theory]
+        [InlineData("3 4 +", "3 4 +")]
+        public void Postfix_ConvertsToPostfixCorrectly(string input, string expected)
+        {
+            var parser = _fixture.Create<PostfixNotationParser>();
+
+            var ninja = new NotationNinja(parser);
+
+            var result = ninja.ToPostfix(input);
+
+            Assert.Equal(expected, result);
+        }
     }
 }

@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NotationNinja.Services", "N
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NotationNinja.Services.Tests", "NotationNinja.Services.Tests\NotationNinja.Services.Tests.csproj", "{FB5AF049-28E2-4727-A8E0-3DC407A6F07B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NotationNinja.MediatR", "NotationNinja.MediatR\NotationNinja.MediatR.csproj", "{06AA4C64-717F-4F14-9FB1-E659DD2CBCB1}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -29,6 +31,10 @@ Global
 		{FB5AF049-28E2-4727-A8E0-3DC407A6F07B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FB5AF049-28E2-4727-A8E0-3DC407A6F07B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FB5AF049-28E2-4727-A8E0-3DC407A6F07B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{06AA4C64-717F-4F14-9FB1-E659DD2CBCB1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{06AA4C64-717F-4F14-9FB1-E659DD2CBCB1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{06AA4C64-717F-4F14-9FB1-E659DD2CBCB1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{06AA4C64-717F-4F14-9FB1-E659DD2CBCB1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

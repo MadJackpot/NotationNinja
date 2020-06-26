@@ -25,10 +25,16 @@ namespace NotationNinja.Services.Nodes
             Left = leftNode;
             Right = rightNode;
 
-            if (parser.WrapOperators() && (rightNode is SymbolNode n) && n.Symbol.Priority > Symbol.Priority)
+            if (parser.WrapOperators() && (rightNode is SymbolNode r) && r.Symbol.Priority > Symbol.Priority)
             {
                 var parenth = new ParenthesisNode{ InternalNode = rightNode, Type = ParenthesisType.Wrap };
                 Right = parenth;
+            }
+
+            if (parser.WrapOperators() && (leftNode is SymbolNode l) && l.Symbol.Priority > Symbol.Priority)
+            {
+                var parenth = new ParenthesisNode{ InternalNode = leftNode, Type = ParenthesisType.Wrap };
+                Left = parenth;
             }
 
             nodes.Remove(leftNode);

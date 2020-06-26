@@ -132,5 +132,44 @@ namespace NotationNinja.Services.Tests
 
             Assert.Equal(expected, result);
         }
+
+        [Theory]
+        [InlineData("1 * ( 2 + 3 )", "1 2 3 + *")]
+        [InlineData("( 1 + 4 ) * 2 + 3", "1 4 + 2 * 3 +")]
+        public void Infix_ConvertsWithParenth(string input, string expected)
+        {
+            var parser = _fixture.Create<InfixNotationParser>();
+
+            var ninja = new NotationNinja(parser);
+
+            var result = ninja.ToPostfix(input);
+
+            Assert.Equal(expected, result);
+        }
+
+        [Theory]
+        [InlineData("1 2 3 + *", "1 * ( 2 + 3 )")]
+        public void Postfix_ConvertsWithParenth(string input, string expected)
+        {
+            var parser = _fixture.Create<PostfixNotationParser>();
+
+            var ninja = new NotationNinja(parser);
+
+            var result = ninja.ToInfix(input);
+
+            Assert.Equal(expected, result);
+        }
+        [Theory]
+        [InlineData("* 1 + 2 3", "1 * ( 2 + 3 )")]
+        public void Prefix_ConvertsWithParenth(string input, string expected)
+        {
+            var parser = _fixture.Create<PrefixNotationParser>();
+
+            var ninja = new NotationNinja(parser);
+
+            var result = ninja.ToInfix(input);
+
+            Assert.Equal(expected, result);
+        }
     }
 }

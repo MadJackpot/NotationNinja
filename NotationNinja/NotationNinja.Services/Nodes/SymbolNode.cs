@@ -16,11 +16,20 @@ namespace NotationNinja.Services.Nodes
         {
             var index = nodes.IndexOf(this);
 
+            // 1 * ( 2 + 3 ) ==> 1 2 3 + *
+            // 1 * ( 2 + 3 ) ==> * 1 + 2 3
+
             var leftNode = parser.GetLeftNode(nodes, index);
             var rightNode = parser.GetRightNode(nodes, index);
 
             Left = leftNode;
             Right = rightNode;
+
+            if (parser.WrapOperators() && (rightNode is SymbolNode n) && n.Symbol.Priority > Symbol.Priority)
+            {
+                var parenth = new ParenthesisNode{ InternalNode = rightNode, Type = ParenthesisType.Wrap };
+                Right = parenth;
+            }
 
             nodes.Remove(leftNode);
             nodes.Remove(rightNode);

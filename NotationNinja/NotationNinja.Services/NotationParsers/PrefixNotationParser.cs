@@ -22,5 +22,10 @@ namespace NotationNinja.Services.NotationParsers
         {
             return nodes[index + 2];
         }
+
+        public bool WrapOperators()
+        {
+            return true;
+        }
     }
 }

@@ -19,6 +19,11 @@ namespace NotationNinja.Services.Nodes
                 return new SymbolNode { Symbol = nodeValue[0].ToSymbol() };
             }
 
+            if (nodeValue.Length == 1 && SymbolLookup.IsParenthesis(nodeValue[0]))
+            {
+                return new ParenthesisNode { Type = nodeValue[0].IsOpenParenthesis() ? ParenthesisType.Open : ParenthesisType.Close };
+            }
+
             throw new InvalidOperationException("No valid symbol");
         }
     }

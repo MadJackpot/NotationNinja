@@ -14,6 +14,7 @@ namespace NotationNinja.Services.Symbols
             { '-', 2 },
             { '*', 1 },
             { '/', 1 },
+            { '^', 0 },
         };
 
         public static int GetSymbolPriority(this char character) => Values[character];

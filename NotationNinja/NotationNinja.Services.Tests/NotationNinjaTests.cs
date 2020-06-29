@@ -164,6 +164,7 @@ namespace NotationNinja.Services.Tests
         }
         [Theory]
         [InlineData("* 1 + 2 3", "1 * ( 2 + 3 )")]
+        [InlineData("* 1 + 2 ^ 3 2", "1 * ( 2 + 3 ^ 2 )")]
         public void Prefix_ConvertsWithParenth(string input, string expected)
         {
             var parser = _fixture.Create<PrefixNotationParser>();

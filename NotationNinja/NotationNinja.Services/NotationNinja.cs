@@ -61,27 +61,39 @@ namespace NotationNinja.Services
             return nodes.Single();
         }
 
-        public List<Node> ProcessParenthesis(List<Node> nodes)
+        public List<Node> ProcessParenthesis(List<Node> nodes, int indexOfParenth = 0)
         {
-            var open = nodes.Find(x => (x is ParenthesisNode p) && p.Type == ParenthesisType.Open);
-            var close = nodes.Find(x => (x is ParenthesisNode p) && p.Type == ParenthesisType.Close);
+            var parenthNode = nodes.FirstOrDefault(x => x is ParenthesisNode n && n.Type == ParenthesisType.Open && nodes.IndexOf(x) >= indexOfParenth) as ParenthesisNode;
 
-            if (open == null || close == null)
+            while (parenthNode != null)
             {
-                return nodes;
+                var index = nodes.IndexOf(parenthNode);
+
+                ParenthesisNode close = null;
+                for (var i = index + 1; i < nodes.Count; ++i)
+                {
+                    if (nodes[i] is ParenthesisNode x && x.Type == ParenthesisType.Open)
+                    {
+                        nodes = ProcessParenthesis(nodes, i);
+                    }
+
+                    if (nodes[i] is ParenthesisNode c && c.Type == ParenthesisType.Close)
+                    {
+                        close = c;
+                        break;
+                    }
+                }
+
+                var closeIndex = nodes.IndexOf(close);
+                var processedNode = CreateAndProcessNodes(nodes.GetRange(index + 1, closeIndex - index - 1));
+
+                parenthNode!.Type = ParenthesisType.Wrap;
+                parenthNode.InternalNode = processedNode;
+
+                nodes.RemoveRange(index + 1, closeIndex - index);
+
+                parenthNode = nodes.FirstOrDefault(x => x is ParenthesisNode n && n.Type == ParenthesisType.Open && nodes.IndexOf(x) > index) as ParenthesisNode;
             }
-
-            var openIndex = nodes.IndexOf(open);
-            var closeIndex = nodes.IndexOf(close);
-            var internalList = nodes.GetRange(openIndex + 1, closeIndex - openIndex - 1);
-
-            var processedInternalNode = CreateAndProcessNodes(internalList);
-
-            openIndex = nodes.IndexOf(open);
-            closeIndex = nodes.IndexOf(close);
-
-            nodes.RemoveRange(openIndex, closeIndex - openIndex + 1);
-            nodes.Insert(openIndex, processedInternalNode);
 
             return nodes;
         }

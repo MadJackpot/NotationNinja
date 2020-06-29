@@ -136,6 +136,7 @@ namespace NotationNinja.Services.Tests
         [Theory]
         [InlineData("1 * ( 2 + 3 )", "1 2 3 + *")]
         [InlineData("( 1 + 4 ) * 2 + 3", "1 4 + 2 * 3 +")]
+        [InlineData("( 8 * ( 4 - 2 ) + 2 ) * ( 2 + 3 )", "8 4 2 - * 2 + 2 3 + *")]
         public void Infix_ConvertsWithParenth(string input, string expected)
         {
             var parser = _fixture.Create<InfixNotationParser>();
@@ -150,6 +151,7 @@ namespace NotationNinja.Services.Tests
         [Theory]
         [InlineData("1 2 3 + *", "1 * ( 2 + 3 )")]
         [InlineData("8 4 + 2 - 2 3 + *", "( 8 + 4 - 2 ) * ( 2 + 3 )")]
+        [InlineData("8 4 2 - * 2 + 2 3 + *", "( 8 * ( 4 - 2 ) + 2 ) * ( 2 + 3 )")]
         public void Postfix_ConvertsWithParenth(string input, string expected)
         {
             var parser = _fixture.Create<PostfixNotationParser>();
